@@ -60,4 +60,4 @@ platforms:
 suites:
 - name: default
   run_list:
-  - recipe[my_cookbook::default]
+  - recipe[vsphere_testing::default]

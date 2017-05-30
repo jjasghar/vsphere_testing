@@ -23,6 +23,10 @@ with_machine_options :bootstrap_options => {
                      },
                      :sudo => true
 
-machine "testing" do
+machine "testing-ubuntu" do
+  action :destroy
+end
+
+machine "testing-windows" do
   action :destroy
 end
