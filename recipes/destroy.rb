@@ -21,9 +21,9 @@ with_machine_options :bootstrap_options => {
                              },
                 :sudo => true
 
-machine "testing-ubuntu" do
-  action :destroy
-end
+#machine "testing-ubuntu" do
+#  action :destroy
+#end
 
  win_bootstrap_options = { :bootstrap_options => {
                              num_cpus: 2,
