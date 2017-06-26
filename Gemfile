@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'chef'
 gem 'chefspec'
-gem 'kitchen-digitalocean'
 gem 'kitchen-dokken'
 gem 'kitchen-docker'
 gem 'stove'
