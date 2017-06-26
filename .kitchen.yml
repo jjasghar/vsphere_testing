@@ -2,7 +2,7 @@
 driver:
   name: vsphere
   driver_options:
-    host: '172.16.20.2'
+    host: '10.0.0.102'
     user: 'administrator@vsphere.local'
     password: 'PASSWORD'
     insecure: true
