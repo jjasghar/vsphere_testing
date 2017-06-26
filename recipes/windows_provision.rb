@@ -1,7 +1,7 @@
 require 'chef/provisioning'
 require 'chef/provisioning/vsphere_driver'
 
-with_vsphere_driver host: '172.16.20.2',
+with_vsphere_driver host: '10.0.0.102',
   insecure: true,
   user:     'administrator@vsphere.local',
   password: 'PASSWORD'
