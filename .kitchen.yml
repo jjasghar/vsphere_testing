@@ -2,7 +2,7 @@
 driver:
   name: vsphere
   driver_options:
-    host: '10.0.0.102'
+    host: '172.16.20.2'
     user: 'administrator@vsphere.local'
     password: 'PASSWORD'
     insecure: true
@@ -13,13 +13,12 @@ driver:
     bootstrap_options:
       use_linked_clone: true
       datacenter: 'Datacenter'
-      template_name: 'ubuntu16-template'
-      template_folder: 'Linux'
+      template_name: 'centos7-tmpl'
       resource_pool: 'Cluster'
       num_cpus: 2
       memory_mb: 4096
       ssh:
-        user: admini
+        user: root
         paranoid: false
         password: admini
         port: 22
@@ -32,30 +31,30 @@ verifier:
   name: inspec
 
 transport:
-  username: "admini"
+  username: "root"
   password: admini
 
 platforms:
   - name: ubuntu-16.04
-  - name: windows
-    driver:
-      machine_options:
-        start_timeout: 600
-        create_timeout: 600
-        ready_timeout: 90
-        bootstrap_options:
-          use_linked_clone: true
-          datacenter: 'Datacenter'
-          template_name: 'windows2012R2'
-          template_folder: 'Windows'
-          resource_pool: 'Cluster'
-          num_cpus: 2
-          memory_mb: 8096
-          ssh:
-            user: "administrator"
-            paranoid: false
-            password: "Admini@"
-            port: 5985
+#  - name: windows
+#    driver:
+#     machine_options:
+#        start_timeout: 600
+#        create_timeout: 600
+#        ready_timeout: 90
+#        bootstrap_options:
+#          use_linked_clone: true
+#          datacenter: 'Datacenter'
+#          template_name: 'windows2012R2'
+#          template_folder: 'Windows'
+#          resource_pool: 'Cluster'
+#          num_cpus: 2
+#          memory_mb: 8096
+#          ssh:
+#            user: "administrator"
+#            paranoid: false
+#            password: "Admini@"
+#            port: 5985
 
 suites:
 - name: default
