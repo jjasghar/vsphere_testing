@@ -6,24 +6,22 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-if os.windows?
-  # This is an example test, replace with your own test.
-  describe user("root") do
-    it { should_not exist }
-  end
-  describe file("C:\\Program\ Files\ \(x86\)\\Google\\Chrome\\Application\\chrome.exe") do
+if os[:family] == 'debian'
+  describe file('/usr/bin/vim') do
     it { should exist }
+    it { should be_symlink }
   end
-  describe file("C:\\Program\ Files\ \(x86\)\\Notepad\+\+\\notepad\+\+.exe") do
+elsif os[:family] == 'redhat'
+  describe file('/usr/bin/vim') do
     it { should exist }
+    it { should_not be_symlink }
   end
-else
-  # This is an example test, replace it with your own test.
-  describe port(80)  do
-    it { should_not be_listening }
-  end
+end
 
-  describe package('vim') do
-    it { should be_installed }
-  end
+describe port(8080) do
+  it { should_not be_listening }
+end
+
+describe port(80) do
+  it { should_not be_listening }
 end
